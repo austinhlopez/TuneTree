@@ -1,0 +1,58 @@
+body {
+    background-color: black;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url(../images/vinyl_home_bg.jpeg);
+}
+
+img.bg {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+div#search_row {
+    min-height: 500px;
+    position: relative;
+}
+
+div[class^='col-'] {
+}
+
+div.search_container {
+    position: absolute; 
+    top: 50%;
+    height: 30%;
+    width: 50%;
+    margin:-15% 0 0 -25%;
+}
+
+div.pie-row {
+    min-height: 500px;
+    position: relative;
+}
+
+div.pie-container {
+    position: absolute;
+    top: 18%;
+    height: 25%;
+    width: 100%;
+    margin: -15% 0 0 -21%;
+}
+
+div.results_col {
+    min-height: 500px;
+    position: relative;
+}
+
+table.results_container {
+    position: absolute;
+    top: 30%;
+    height: 30%;
+    margin:-15% 0 0 -25%;
+}
+
+table.table {
+    background-color: #EEEEEE;
+}
+
