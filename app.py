@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, request
 app = Flask(__name__)
 
 @app.route('/', methods=['GET', 'POST'])
@@ -6,14 +6,15 @@ def index():
     if request.method == 'POST':
         print "do something here!"
     elif request.method == 'GET':
-    # Two options when rendering client-side templates.
-    # return send_file('templates/index.html')
-    # The one above caches files, the one below does not (preferred)
-    return make_response(open('templates/index.html').read())
-print "Get the API! Render something!"
+        # Two options when rendering client-side templates.
+        # return send_file('templates/index.html')
+        # The one above caches files, the one below does not (preferred)
+        # Not a real response yet. No real index template.
+        return make_response(open('templates/index.html').read())
 
 @app.route('/track/<trackId>/lyrics')
 def getLyricsByTrackId(trackId):
+    print "OUT HERE IN THE FIELDS I FOUGHT FOR MY MEALS I PUT MY BACK INTO MY LIVING"
 
     @app.route('/track/<int:trackId>')
 def getTrackById(trackId):
@@ -22,6 +23,13 @@ def getTrackById(trackId):
 @app.route('/artist/<int:artistId>')
 def getArtistById(artistId):
     return "Captian Beefheart"
+
+#---------ERROR HANDLING----------------$
+# errorhandler is another flask decorator. Look that up for more 
+# information.
+@app.errorhandler(404)
+def pageNotFound(error):
+    return make_response(open('templates/pageNotFound.html').read()), 404
 
 if __name__ == '__main__':
     app.run(debug=True)
