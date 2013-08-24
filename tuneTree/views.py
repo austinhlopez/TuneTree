@@ -1,11 +1,4 @@
-from flask import Flask, request, make_response, url_for
-from flask.ext.sqlalchemy import SQLAlchemy
-
-app = Flask(__name__)
-# Loads all uppercase variables defined in 'APP_SETTINGS'
-app.config.from_envvar('APP_SETTINGS', silent=True)
-db = SQLAlchemy(app)
-
+from tuneTree import app
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
@@ -18,13 +11,13 @@ def index():
         # Not a real response yet. No real index template.
         return make_response(open('templates/index.html').read())
 
-@app.route('/track/<trackId>/lyrics')
-def getLyricsByTrackId(trackId):
-    print "OUT HERE IN THE FIELDS I FOUGHT FOR MY MEALS I PUT MY BACK INTO MY LIVING"
-
 @app.route('/track/<int:trackId>')
 def getTrackById(trackId):
     return "Frownland."
+
+@app.route('/track/<int:trackId>/lyrics')
+def getLyricsByTrackId(trackId):
+    return "OUT HERE IN THE FIELDS I FOUGHT FOR MY MEALS I PUT MY BACK INTO MY LIVING"
 
 @app.route('/artist/<int:artistId>')
 def getArtistById(artistId):
@@ -37,8 +30,3 @@ def getArtistById(artistId):
 def pageNotFound(error):
     return make_response(open('templates/pageNotFound.html').read()), 404
 
-if __name__ == '__main__':
-    app.run()
-
-#----------DB STUFF----------------------$
-# TODO: Add DB stuff here.
