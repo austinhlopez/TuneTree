@@ -1,8 +1,11 @@
 from flask import Flask, request, make_response, url_for
+from flask.ext.sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
 # Loads all uppercase variables defined in 'APP_SETTINGS'
 app.config.from_envvar('APP_SETTINGS', silent=True)
+db = SQLAlchemy(app)
+
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
