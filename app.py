@@ -1,5 +1,8 @@
-from flask import Flask, request
+from flask import Flask, request, make_response, url_for
+
 app = Flask(__name__)
+# Loads all uppercase variables defined in 'APP_SETTINGS'
+app.config.from_envvar('APP_SETTINGS', silent=True)
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
@@ -16,7 +19,7 @@ def index():
 def getLyricsByTrackId(trackId):
     print "OUT HERE IN THE FIELDS I FOUGHT FOR MY MEALS I PUT MY BACK INTO MY LIVING"
 
-    @app.route('/track/<int:trackId>')
+@app.route('/track/<int:trackId>')
 def getTrackById(trackId):
     return "Frownland."
 
@@ -32,4 +35,7 @@ def pageNotFound(error):
     return make_response(open('templates/pageNotFound.html').read()), 404
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()
+
+#----------DB STUFF----------------------$
+# TODO: Add DB stuff here.
