@@ -1,11 +1,14 @@
-<!doctype html>
+<!DOCTYPE html>
 <html ng-app>
   <head>
-    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL}}css/bootstrap.css"
+    <title> TuneTree </title>
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL}}css/bootstrap.css">
+    <script data-main="static/js/main" src="static/lib/require.js"></script>
     <div ng-include="{{ template_head }}"></div>
   </head>
 
   <body>
+    
     <h1> It's the index page!</h1>
     <div ng-include="{{ template_body }}"></div>
   </body>
