@@ -33,7 +33,7 @@ require.config
       deps: [
         "angular"
         "angularStrap"
-        [
+        ]
       exports: "window.app.ngApp"
     appConfig:
       deps: ["ngApp"]
@@ -64,4 +64,4 @@ require [
 ]
 , (angular, angularResource, ngApp) ->
   "use strict"
-  angular.bootstrap(window.document, ['ngApp']
+  angular.bootstrap(window.document, ['ngApp'])

@@ -1,8 +1,8 @@
-if (!window.ngApp?)
-  window.ngApp = {app: {}}
+if (!window.tuneTree?)
+  window.tuneTree = {app: {}}
 
-window.app.ngAppServices = angular.module('ngApp.services',[])
-window.app.ngAppDirectives = angular.module('ngApp.directives', [])
-window.app.ngAppFilters = angular.module('ngApp.filters', [])
+window.tuneTree.app.ngAppServices = angular.module('ngApp.services',[])
+window.tuneTree.app.ngAppDirectives = angular.module('ngApp.directives', [])
+window.tuneTree.app.ngAppFilters = angular.module('ngApp.filters', [])
 
-window.app.app = angular.module('ngApp', ['ngAppApi', 'ngApp.services', 'ngApp.directives', 'ngApp.filters'])
+window.tuneTree.app.ngApp = angular.module('ngApp', ['ngAppApi', 'ngApp.services', 'ngApp.directives', 'ngApp.filters'])
