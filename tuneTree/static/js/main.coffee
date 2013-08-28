@@ -12,6 +12,10 @@ require.config
     ngAppappConfig: "angular/ngApp.config"
     ngAppApi: "angular/ngAppApi"
     angularStrap: "../lib/angular-strap-master"
+    artistCtrl: "angular/controllers/artistCtrl"
+    lyricsCtrl: "angular/controllers/lyricsCtrl"
+    trackCtrl: "angular/controllers/trackCtrl"
+    ngAppCtrl: "angular/controllers/ngAppCtrl"
     # angular controllers
     # angular directives
     # angular filters
@@ -45,6 +49,14 @@ require.config
         "bootstrap"
       ]
     # Angular controllers
+    artistCtrl:
+      deps: ["ngApp"]
+    lyricsCtrl:
+      deps: ["ngApp"]
+    trackCtrl:
+      deps: ["ngApp"]
+    ngAppCtrl:
+      deps: ["ngApp"]
     # Angular directives
     # Angular filters
     # Angular services
@@ -61,6 +73,10 @@ require [
   "ngAppConfig"
   "ngAppApi"
   "angularStrap"
+  "artistCtrl"
+  "lyricsCtrl"
+  "trackCtrl"
+  "ngAppCtrl"
 ]
 , (angular, angularResource, ngApp) ->
   "use strict"
