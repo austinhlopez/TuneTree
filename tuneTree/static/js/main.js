@@ -4,16 +4,18 @@
     waitSeconds: 0,
     paths: {
       angular: "../lib/angular.min",
-      angularResource: {
-        deps: ["angular"]
-      },
-      bootstrap: "../lib/bootstrap.2.3.1",
-      jquery: "../lib/jquery-1.2.10.min",
-      highcharts: "../lib/highcharts",
-      ngApp: "angular/app",
-      ngAppappConfig: "angular/ngApp.config",
+      angularResource: "https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular-resource",
+      bootstrap: "../lib/bootstrap-3.0.0/dist/js/bootstrap.min",
+      jquery: "../lib/jquery-1.10.2.min",
+      highcharts: "../lib/highcharts/js/highcharts",
+      ngApp: "angular/ngApp",
+      ngAppConfig: "angular/ngApp.config",
       ngAppApi: "angular/ngAppApi",
-      angularStrap: "../lib/angular-strap-master"
+      angularStrap: "../lib/angular-strap-master/dist/angular-strap.min",
+      artistCtrl: "angular/controllers/artistCtrl",
+      lyricsCtrl: "angular/controllers/lyricsCtrl",
+      trackCtrl: "angular/controllers/trackCtrl",
+      ngAppCtrl: "angular/controllers/ngAppCtrl"
     },
     shim: {
       jquery: {
@@ -22,6 +24,9 @@
       angular: {
         deps: ["jquery"],
         exports: "angular"
+      },
+      angularResource: {
+        deps: ["angular"]
       },
       bootstrap: {
         deps: ["jquery"],
@@ -33,22 +38,34 @@
       },
       ngApp: {
         deps: ["angular", "angularStrap"],
-        exports: "window.app.ngApp"
+        exports: "window.tuneTree.app.ngApp"
       },
-      appConfig: {
-        deps: ["ngApp"]
+      ngAppConfig: {
+        deps: ["ngApp", "angular"]
       },
-      appApi: {
-        deps: ["ngApp"]
+      ngAppApi: {
+        deps: ["ngApp", "angular"]
       },
       angularStrap: {
         deps: ["angular", "bootstrap"]
+      },
+      artistCtrl: {
+        deps: ["ngApp"]
+      },
+      lyricsCtrl: {
+        deps: ["ngApp"]
+      },
+      trackCtrl: {
+        deps: ["ngApp"]
+      },
+      ngAppCtrl: {
+        deps: ["ngApp"]
       }
     },
     priority: ["angular", "angularResource"]
   });
 
-  require(["angular", "angularResource", "bootstrap", "jquery", "highcharts", "ngApp", "ngAppConfig", "ngAppApi", "angularStrap"], function(angular, angularResource, ngApp) {
+  require(["angular", "angularResource", "bootstrap", "jquery", "highcharts", "ngApp", "ngAppConfig", "ngAppApi", "angularStrap", "artistCtrl", "lyricsCtrl", "trackCtrl", "ngAppCtrl"], function(angular, angularResource, ngApp) {
     "use strict";    return angular.bootstrap(window.document, ['ngApp']);
   });
 

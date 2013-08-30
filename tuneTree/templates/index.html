@@ -2,17 +2,15 @@
 <html ng-controller="ngAppCtrl">
   <head>
     <title> TuneTree </title>
-    <link rel="stylesheet" type="text/css" href="tuneTree/static/css/bootstrap.css">
-    <script data-main="tuneTree/static/js/main.js" src="static/lib/require.js"></script>
-    <script src="tuneTree/static/js/angular/ngApp.config.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.css">
     <script>
       window.tuneTree = {}
       window.tuneTree.app = {}
     </script>
+    <script data-main="/static/js/main.js" src="/static/lib/require.js"></script>
   </head>
 
   <body>
     <h1> It's the index page!</h1>
-    <div ng-include="{{ $route.current.templateUrl }}"></div>
   </body>
 </html>
